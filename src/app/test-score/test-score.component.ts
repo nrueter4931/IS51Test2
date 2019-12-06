@@ -83,7 +83,8 @@ export class TestScoreComponent implements OnInit {
       this.toastService.showToast('warning', 2000, 'name must have a comma!');
     } else {
       console.log('success');
-      this.computer();
+      const data = this.computer();
+      this.router.navigate(['home', data]);
     }
   }
 
@@ -102,6 +103,6 @@ export class TestScoreComponent implements OnInit {
       totalPointsReceived: tpr,
       totalPercentage: tpr / tpp,
       finalGrade: 'changeme'
-    }
+    };
   }
 }

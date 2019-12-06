@@ -11,11 +11,13 @@ import { Http } from '@angular/http';
 })
 export class HomeComponent implements OnInit {
 
- 
+  data: any = {};
   constructor(private activatedRoute: ActivatedRoute, private http: Http) { }
 
   async ngOnInit() {
-
+this.activatedRoute.params.subscribe((a) => {
+  this.data = a;
+});
   }
 
   
